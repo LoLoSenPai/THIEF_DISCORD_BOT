@@ -1,0 +1,13 @@
+{
+  "token": "",
+  "clientId": "",
+  "guildId": "",
+  "mongoURI": "",
+  "CHANNEL_ID": "",
+  "CHANNEL_ID2": "",
+  "REACTION_ROLE_ID": "",
+  "REACTION_ROLE_ID_1": "",
+  "REACTION_ROLE_ID_2": "",
+  "KICK_PROBABILITY": 0.005,
+  "PVP_WIN_PROBABILITY": 0.1
+}
