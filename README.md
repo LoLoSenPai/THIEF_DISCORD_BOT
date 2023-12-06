@@ -1,6 +1,6 @@
-# GamingBot
+# Thief Gaming Bot
 
-GamingBot is an interactive Discord bot designed to enhance your server's experience with a variety of gaming-related features. Ideal for communities who love gaming, this bot brings fun and engagement to your Discord server.
+Thief Gaming Bot is an interactive Discord bot designed to enhance your server's experience with a variety of gaming-related features. Ideal for communities who love gaming, this bot brings fun and engagement to your Discord server.
 
 ## Features
 
@@ -30,8 +30,8 @@ To set up GamingBot on your server, follow these steps:
 
 1. Clone the repository to your local machine or server.
 2. Install the required dependencies using `npm install`.
-3. Set up your `.env` file with your Discord bot token and other configuration details.
-4. Start the bot using a process manager like PM2 (e.g., `pm2 start index.js --name "GamingBot"`).
+3. Set up your `config.json` file with your Discord bot token and other configuration details.
+4. Start the bot using  `node index.js"`).
 
 ## Usage
 
