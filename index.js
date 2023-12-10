@@ -112,15 +112,17 @@ client.on('messageCreate', async (message) => {
         const pointsEarned = Math.floor(Math.random() * 10) + 1;
         user.xp += pointsEarned;
         await user.save();
-        console.log(`Added ${pointsEarned} points to ${message.author.tag}`);
-        message.reply(`You earned ${pointsEarned} points!`);
+        // console.log(`Added ${pointsEarned} points to ${message.author.tag}`);
+        // message.reply(`You earned ${pointsEarned} points!`);
 
         if (Math.random() < KICK_PROBABILITY) {
             const member = await message.guild.members.fetch(message.author.id);
-            const isModOrOwner = member.roles.cache.some(role => role.name === "Modérateur" || role.name === "Owner");
+            const isServerOwner = member.id === message.guild.ownerId;
+            const MODERATOR_ROLE_ID = "888540805269180488";
+            const isMod = member.roles.cache.some(role => role.id === MODERATOR_ROLE_ID);
 
-            if (!isModOrOwner) {
-                await member.kick('Has sido expulsado como parte del juego.');
+            if (!isServerOwner && !isMod) {
+                await member.kick('You were kicked for being unlucky');
                 const kickEmbed = new EmbedBuilder()
                     .setColor('#FF0000')
                     .setTitle(`🔥🔥 ${message.author.toString()} HAVE BEEN BURNED 🔥🔥.`);

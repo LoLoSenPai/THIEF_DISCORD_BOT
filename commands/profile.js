@@ -12,10 +12,16 @@ module.exports = {
             return;
         }
 
+        const roleNames = [];
+        for (const roleId of userProfile.roles) {
+            const role = await interaction.guild.roles.fetch(roleId).catch(console.error);
+            if (role) roleNames.push(role.name);
+        }
+
         const profileEmbed = new EmbedBuilder()
             .setColor('#FFD700')
             .setAuthor({ name: interaction.user.tag, iconURL: interaction.user.displayAvatarURL() })
-            .setDescription(`XP: ${userProfile.xp}\nRoles: ${userProfile.roles.join(', ')}`)
+            .setDescription(`XP: ${userProfile.xp}\nRoles: ${roleNames.join(', ')}`)
             .setTitle('🔥 Profile 🔥');
 
         await interaction.reply({ embeds: [profileEmbed] });
